@@ -1,5 +1,6 @@
 #include "parser.h"
 #include "generation.h"
+#include "out.h"
 
 int main (int argc, char *argv[]) {
     pars::parser parsing;
@@ -11,7 +12,10 @@ int main (int argc, char *argv[]) {
         std::cout << "Write: one point *num* *num* and press enter for write next numbers" << "\n";
     }
 
-    gen::generation genertionfig(std::atof(argv[2]), std::atof(argv[4]), parsing.getPoints());
+    gen::generation generationfig(std::atof(argv[2]), std::atof(argv[4]), parsing.getPoints());
+
+    generationfig.generate();
+    outs::out::printRes(generationfig.getLines());
 
     return 0;
 }

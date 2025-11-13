@@ -1,6 +1,6 @@
 #pragma once
 
-#include "structP.h"
+#include "struct.h"
 
 #include <vector>
 #include <string>
